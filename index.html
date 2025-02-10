@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="pract4.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #3b3b3b;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .merry-christmas {
+            position: absolute;
+            top: 5%;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+            animation: blinkColors 4s infinite alternate;
+            z-index: 9999;
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        .merry-christmas .line {
+            display: block;
+            font-size: 5vw;
+            margin: 0;
+            animation: blinkColors 4s infinite alternate;
+        }
+
+        @keyframes fadeOutSlide {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+        }
+
+        .tap-message {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            font-size: 2vw;
+            font-weight: bold;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+            color: #ff0000;
+            animation: blinkColors 2s infinite alternate;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 1s ease-out;
+        }
+
+        .tap-message i {
+            font-size: 2.5vw;
+            color: #ffd700;
+            text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700;
+        }
+
+        .tap-message.fade-out {
+            animation: fadeOutSlide 1s forwards;
+        }
+
+        @keyframes blinkColors {
+            0% {
+                color: #ff0000;
+                text-shadow: 0 0 10px #ff0000;
+            }
+            25% {
+                color: #00ff00;
+                text-shadow: 0 0 10px #00ff00;
+            }
+            50% {
+                color: #ffd700;
+                text-shadow: 0 0 10px #ffd700;
+            }
+            75% {
+                color: #ffffff;
+                text-shadow: 0 0 10px #ffffff;
+            }
+            100% {
+                color: #ff0000;
+                text-shadow: 0 0 10px #ff0000;
+            }
+        }
+
+        #bzd-logo {
+            position: absolute;
+            bottom: 75px;
+            right: 25px;
+            width: 75px;
+            height: auto;
+            z-index: 10000;
+        }
+
+        #github-link {
+            position: absolute;
+            bottom: 10px;
+            right: 25px;
+            font-size: 1vw;
+            color: #ffffff;
+            text-decoration: none;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+            animation: blinkColors 4s infinite alternate;
+            z-index: 10000;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (max-width: 600px) {
+            #github-link {
+                font-size: 2vw;
+            }
+        }
+    </style>
+
+<body>
+
+<div class="merry-christmas">
+    <span class="line">Merry</span>
+    <span class="line">Christmas!!</span> 
+</div>
+    <div class="elka">
+        <img src="pngegg.png" onclick="elk()" class="el">
+        <img src="Group 1.png" onclick="elk_press()" class="el2"> 
+    </div>
+    <div id="wrapper">
+        <div class="countdown-container">
+          <h1>Christmas Countdown</h1>
+          <div id="timer">
+            <div id="days"></div>
+            <div id="hours"></div>
+            <div id="mins"></div>
+            <div id="secs" class="animated"></div>
+            <span class="label" >Days</span>
+            <span class="label">Hours</span>
+            <span class="label">Mins</span>
+            <span class="label">Secs</span>
+          </div>
+        </div> 
+  
+        <div id="quiz-container" class="visible">
+          <h1>Christmas Quiz</h1>
+          <div class="questionCount">Question 
+            <span id="questionNumber">1</span>/<span id="questionTotal">5</span>
+          </div>
+          <div class="question">
+            <p>What was Joseph's job?</p>
+          </div>
+  
+          <div class="answer">
+            <div id="a0" class="answer-box">0</div>
+            <div id="a1" class="answer-box">1</div>
+            <div id="a2" class="answer-box">2</div>
+            <div id="a3" class="answer-box">3</div>
+          </div>
+  
+          <div class="message-box">
+            <div class="message">GOOD LUCK!</div>
+            <div class="message-restart hidden">
+              <button class="restart-btn">PLAY AGAIN</button>
+            </div>
+          </div>
+  
+          <div class="score">
+            <p id="green">Correct answers: <span id="correctCount">0</span></p>
+            <p id="red">Wrong answers: <span id="wrongCount">0</span></p>
+          </div>
+        </div>
+      </div>
+  
+</h1>
+</div>
+</div>
+</body>
+<script src="pract4.js">
+</script>
+</html>
